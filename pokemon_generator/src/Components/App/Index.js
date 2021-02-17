@@ -11,7 +11,7 @@ const [id, setId] = useState(1);
 
   useEffect(() => {
     async function getPokemon() {
-      let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`); 
+      let response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`); 
       data = await response.json();
       console.log(data);
       setpokemon(data);
